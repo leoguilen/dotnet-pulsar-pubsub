@@ -1,0 +1,16 @@
+@BaseHostAddress = http://localhost:5042
+
+GET {{BaseHostAddress}}/health
+Accept: */*
+
+###
+
+POST {{BaseHostAddress}}/api/messages
+Content-Type: application/json
+Accept: */*
+
+{
+    "content": "{{$datetime iso8601}}"
+}
+
+###

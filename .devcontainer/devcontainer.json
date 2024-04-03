@@ -1,0 +1,47 @@
+{
+	"name": "C# (.NET)",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2.4.2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"upgradePackages": true,
+			"username": "vscode",
+			"uid": "1000",
+			"gid": "1000"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/github-cli": {
+			"version": "latest"
+		}
+	},
+	"overrideFeatureInstallOrder": [
+		"ghcr.io/devcontainers/features/common-utils"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [5000, 5001],
+	// "portsAttributes": {
+	//		"5001": {
+	//			"protocol": "https"
+	//		}
+	// }
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"vscode-icons-team.vscode-icons",
+				"ms-dotnettools.csdevkit",
+				"humao.rest-client",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				"terminal.integrated.shell.linux": "/usr/bin/zsh",
+				"extensions.ignoreRecommendations": true
+			}
+		}
+	},
+	"remoteUser": "vscode"
+}
